@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kommon, Inc.</title>
+    <title>Kommon</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&family=Inter:wght@400&display=swap"
@@ -19,15 +19,16 @@
         </a>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="/about.html">Company</a></li>
+            <li><a href="#who-we-are">事業内容</a></li>
+            <li><a href="#company">会社情報</a></li>
             <li>
               <a href="https://per-pj.github.io/per-pj/" target="_blank"
-                >Works</a
+                >ポートフォリオ</a
               >
             </li>
             <li>
               <a href="https://per-pj.github.io/per-pj/contact/" target="_blank"
-                >Contact</a
+                >お問い合わせ</a
               >
             </li>
           </ul>
@@ -40,15 +41,64 @@
       </div>
     </header>
 
-    <!-- ヒーロー -->
+    <!-- Hero -->
     <section class="hero">
-      <h1 class="hero-en">Create products people need.</h1>
+      <div class="hero-content center">
+        <h1>Create products people need.</h1>
+      </div>
     </section>
 
-    <!-- フッター -->
+    <!-- 事業内容 -->
+    <section class="message-section" id="who-we-are">
+      <div class="message-content">
+        <h2 class="message-title">事業内容</h2>
+        <p class="message-text">
+          Kommonは、2016年に創業されたスタートアップです。様々なプロダクトを開発し、検証を行なっています。自社事業開発の他、企業やブランドの本質的な課題を特定し、
+          長期的な価値を生み出すソリューションを設計しています。
+        </p>
+        <a
+          href="https://per-pj.github.io/per-pj/contact/"
+          target="_blank"
+          class="contact-button"
+          >お問い合わせ</a
+        >
+      </div>
+      <!-- 画像 -->
+      <div class="services-img">
+        <img src="services.jpg" alt="Services" />
+      </div>
+    </section>
+
+    <!-- 会社情報 -->
+    <section class="message-section" id="company">
+      <div class="message-content">
+        <h2 class="message-title">会社情報</h2>
+        <div class="company-info">
+          <p><strong>会社名</strong><span>Kommon株式会社</span></p>
+          <p><strong>英文社名</strong><span>Kommon, Inc.</span></p>
+          <p><strong>設立日</strong><span>2016年4月15日</span></p>
+          <p><strong>代表取締役</strong><span>酒匂和裕</span></p>
+        </div>
+      </div>
+      <!-- Google Map -->
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51884.99775295402!2d139.64840753637236!3d35.632352056806475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f4cc9e2835f1%3A0x28078d19a4b01873!2z5p2x5Lqs6YO955uu6buS5Yy6!5e0!3m2!1sja!2sjp!4v1759084904777!5m2!1sja!2sjp"
+          width="100%"
+          height="400"
+          style="border: 0"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+      </div>
+    </section>
+
+    <!-- Footer -->
     <footer class="site-footer">
       <small>© 2016–2025 Kommon Inc.</small>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

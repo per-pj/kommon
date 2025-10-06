@@ -4,11 +4,12 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  background: #fff;
-  color: #000;
-  line-height: 1.7;
+  background: #000;
+  color: #fff;
+  line-height: 1.6;
   font-weight: 400;
 }
 
@@ -18,118 +19,186 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(0, 0, 0, 0.95);
   backdrop-filter: blur(8px);
   z-index: 1000;
-  height: 72px; /* 高さを固定 */
+  height: 72px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 2rem; /* 上下パディングはなしに統一 */
+  padding: 0 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 100%;
 }
+
 .logo img {
-  height: 48px;
+  height: 28px;
   display: block;
 }
+
+/* ===== Navigation ===== */
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 2.5rem;
+  gap: 2rem;
 }
+
 .nav a {
   text-decoration: none;
-  color: #000;
-  font-size: 1.1rem;
+  color: #fff;
+  font-size: 0.9375rem;
   font-weight: 400;
-  line-height: 1; /* 微妙なずれ防止 */
+  line-height: 1;
   transition: color 0.2s ease;
 }
+
 .nav a:hover,
 .nav a.active {
-  color: #555;
+  color: #aaa;
 }
 
 /* ===== Hero ===== */
 .hero {
   height: 100vh;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 0 1rem;
+  padding: 0 2rem;
 }
-.hero-en {
-  font-size: clamp(2.4rem, 5.5vw, 3.8rem);
+
+.hero-content.center {
+  text-align: center;
+}
+
+.hero-content.center h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 400;
   letter-spacing: 0.02em;
 }
 
-/* ===== About Page ===== */
-main {
-  padding-top: 100px;
-}
-.intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 4rem auto 3rem;
-  padding: 0 1.5rem;
-}
-.intro .main-title {
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 400;
-}
-.company-info {
-  max-width: 700px;
-  margin: 0 auto 4rem;
-  padding: 0 1.5rem;
-  display: grid;
-  gap: 1rem;
-}
-.company-info .info-item {
+/* ===== Sections ===== */
+.message-section {
+  min-height: 100vh;
   display: flex;
-  justify-content: space-between;
-  border-bottom: 1px solid #eee;
-  padding: 0.5rem 0;
-  font-weight: 400;
-  color: #333;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 8rem 2rem;
+  gap: 3rem;
 }
-.map {
-  margin: 0 auto 4rem;
+
+.message-content {
   max-width: 1000px;
-  padding: 0 1.5rem;
+  /* 修正: 親要素の幅を広げる */
+  width: 100%;
+}
+
+.message-title {
+  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.message-text {
+  font-size: clamp(1rem, 1.8vw, 1.125rem);
+  line-height: 1.7;
+  color: #fff;
+}
+
+/* ===== Services Image ===== */
+.services-img {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.services-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* ===== Contact Button ===== */
+.contact-button {
+  display: inline-block;
+  margin-top: 2rem;
+  padding: 0.75rem 1.75rem;
+  background: #fff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 0.9375rem;
+  transition: all 0.3s ease;
+}
+
+.contact-button:hover {
+  background: #ccc;
+}
+
+/* ===== Company Info ===== */
+.company-info {
+  margin-top: 2rem;
+  /* 修正: コンテナの横幅を広げ、中央に配置 */
+  max-width: 650px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.company-info p {
+  display: flex;
+  /* 修正: 左詰めで配置 */
+  justify-content: flex-start;
+  align-items: baseline;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 1.25rem 0;
+  font-size: 1rem;
+}
+
+.company-info strong {
+  /* 修正: 項目名に固定幅を与え、レイアウトを安定させる */
+  width: 50%;
+  flex-shrink: 0; /* 縮まないように設定 */
+  color: #fff;
+  text-align: left;
+}
+
+.company-info span {
+  /* 修正: 値を左揃えにする */
+  width: auto;
+  color: #fff;
+  text-align: left;
+}
+
+/* ===== Map ===== */
+.map {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.map iframe {
+  border-radius: 8px;
 }
 
 /* ===== Footer ===== */
 .site-footer {
   text-align: center;
   padding: 2rem;
-  font-size: 1rem;
+  font-size: 0.875rem;
   color: #666;
 }
 
-/* ===== Responsive ===== */
-@media (max-width: 768px) {
-  .container {
-    padding: 1rem 1.5rem;
-  }
-  .nav ul {
-    gap: 1.5rem;
-  }
-  .nav a {
-    font-size: 1rem;
-  }
-  .hero-en {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-}
-
-/* ハンバーガーメニュー */
+/* ===== Hamburger ===== */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -137,30 +206,36 @@ main {
   width: 30px;
   height: 24px;
   cursor: pointer;
-  z-index: 1100; /* メニューより前面 */
+  z-index: 1100;
 }
+
 .hamburger span {
   display: block;
   height: 3px;
   width: 100%;
-  background: #000;
+  background: #fff;
   border-radius: 2px;
   transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* シンプルな × アニメーション */
 .hamburger.active span:nth-child(1) {
   transform: translateY(10.5px) rotate(45deg);
 }
+
 .hamburger.active span:nth-child(2) {
   opacity: 0;
 }
+
 .hamburger.active span:nth-child(3) {
   transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* スマホ用ナビ */
+/* ===== Responsive ===== */
 @media (max-width: 768px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+
   .hamburger {
     display: flex;
   }
@@ -169,15 +244,55 @@ main {
     position: absolute;
     top: 100%;
     right: 1.5rem;
-    background: #f3f3f3;
+    background: #1a1a1a;
     flex-direction: column;
     width: 150px;
     padding: 1rem;
     display: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
   }
+
   .nav ul.open {
     display: flex;
+  }
+
+  .nav ul {
+    gap: 1.5rem;
+  }
+
+  .nav a {
+    font-size: 0.9375rem;
+  }
+
+  .hero-content.center h1 {
+    font-size: 2rem;
+  }
+
+  .message-section {
+    padding: 6rem 1.5rem;
+  }
+
+  .company-info {
+    max-width: 100%;
+  }
+
+  .company-info p {
+    /* 修正: スマホでは縦積みにする */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .company-info strong,
+  .company-info span {
+    /* 修正: PC用のwidth指定をリセット */
+    width: 100%;
+    text-align: left;
+  }
+
+  .map {
+    max-width: 100%;
   }
 }
