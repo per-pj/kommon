@@ -1,225 +1,398 @@
-/* ===== Reset & Base ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Inter', 'Noto Sans JP', sans-serif;
-  background: #000;
-  color: #fff;
-  line-height: 1.6;
-  font-weight: 400;
+:root {
+  --bg: #fafafa;
+  --text: #0a0a0a;
+  --text-secondary: #737373;
+  --border: #e5e5e5;
+  --accent: #0a0a0a;
+  --badge: #d1ecff;
 }
 
-/* ===== Header ===== */
+body {
+  font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Header */
 .site-header {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(8px);
+  background: rgba(250, 250, 250, 0.8);
+  backdrop-filter: blur(20px);
   z-index: 1000;
-  height: 72px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid var(--border);
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 3rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
+  height: 80px;
 }
 
-.logo img {
-  height: 28px;
-  display: block;
+.logo {
+  text-decoration: none;
 }
 
-/* ===== Navigation ===== */
+.logo-text {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
 .nav ul {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
 .nav a {
   text-decoration: none;
-  color: #fff;
+  color: var(--text);
   font-size: 0.9375rem;
-  font-weight: 400;
-  line-height: 1;
+  font-weight: 500;
   transition: color 0.2s ease;
+  letter-spacing: -0.01em;
 }
 
-.nav a:hover,
-.nav a.active {
-  color: #aaa;
+.nav a:hover {
+  color: var(--text-secondary);
 }
 
-/* ===== Hero ===== */
+/* Hero Section */
 .hero {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0 2rem;
-}
-
-.hero-content.center {
-  text-align: center;
-}
-
-.hero-content.center h1 {
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-/* ===== Sections ===== */
-.message-section {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 10rem 3rem 6rem;
+  position: relative;
+}
+
+.hero-content {
   text-align: center;
-  padding: 8rem 2rem;
-  gap: 3rem;
+  max-width: 900px;
+  position: relative;
+  z-index: 1;
 }
 
-.message-content {
-  max-width: 1000px;
-  /* 修正: 親要素の幅を広げる */
-  width: 100%;
-}
-
-.message-title {
-  font-size: clamp(1.75rem, 3.5vw, 2.5rem);
-  font-weight: 400;
-  letter-spacing: 0.01em;
-  margin-bottom: 1.5rem;
-  color: #fff;
-}
-
-.message-text {
-  font-size: clamp(1rem, 1.8vw, 1.125rem);
-  line-height: 1.7;
-  color: #fff;
-}
-
-/* ===== Services Image ===== */
-.services-img {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-}
-
-.services-img img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-}
-
-/* ===== Contact Button ===== */
-.contact-button {
+.hero-badge {
   display: inline-block;
-  margin-top: 2rem;
-  padding: 0.75rem 1.75rem;
-  background: #fff;
-  color: #000;
-  text-decoration: none;
+  padding: 0.5rem 1rem;
+  background: var(--badge);
+  color: var(--text);
   border-radius: 6px;
-  font-size: 0.9375rem;
-  transition: all 0.3s ease;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 2rem;
 }
 
-.contact-button:hover {
-  background: #ccc;
+.hero h1 {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
 }
 
-/* ===== Company Info ===== */
-.company-info {
-  margin-top: 2rem;
-  /* 修正: コンテナの横幅を広げ、中央に配置 */
-  max-width: 650px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.hero p {
+  font-size: clamp(1.125rem, 2vw, 1.375rem);
+  color: var(--text-secondary);
+  margin-bottom: 3rem;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
 }
 
-.company-info p {
+.cta-buttons {
   display: flex;
-  /* 修正: 左詰めで配置 */
-  justify-content: flex-start;
-  align-items: baseline;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-  padding: 1.25rem 0;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 1.125rem 2.5rem;
+  border-radius: 8px;
   font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: none;
+  letter-spacing: -0.01em;
 }
 
-.company-info strong {
-  /* 修正: 項目名に固定幅を与え、レイアウトを安定させる */
-  width: 50%;
-  flex-shrink: 0; /* 縮まないように設定 */
-  color: #fff;
-  text-align: left;
+.btn-primary {
+  background: var(--accent);
+  color: var(--bg);
 }
 
-.company-info span {
-  /* 修正: 値を左揃えにする */
-  width: auto;
-  color: #fff;
-  text-align: left;
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* ===== Map ===== */
-.map {
-  width: 100%;
-  max-width: 100%;
+.btn-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 1.5px solid var(--border);
+}
+
+.btn-secondary:hover {
+  border-color: var(--text);
+}
+
+/* Product Section */
+.product-section {
+  padding: 8rem 3rem;
+  background: var(--bg);
+}
+
+.section-content {
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-.map iframe {
-  border-radius: 8px;
+.section-badge {
+  display: inline-block;
+  padding: 0.375rem 0.875rem;
+  background: var(--badge);
+  color: var(--text);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1.5rem;
 }
 
-/* ===== Footer ===== */
+.section-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.03em;
+}
+
+.section-description {
+  font-size: 1.375rem;
+  color: var(--text-secondary);
+  margin-bottom: 5rem;
+  max-width: 700px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+}
+
+.product-card {
+  background: #ffffff;
+  border-radius: 24px;
+  padding: 4rem;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.product-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+}
+
+.product-icon {
+  width: 72px;
+  height: 72px;
+  background: var(--text);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.product-card h3 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.product-card p {
+  color: var(--text-secondary);
+  font-size: 1.125rem;
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+  letter-spacing: -0.01em;
+}
+
+.product-features {
+  list-style: none;
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 1rem;
+}
+
+.product-features li {
+  padding: 1.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: var(--text);
+  border-bottom: 1px solid var(--border);
+  font-size: 1rem;
+}
+
+.product-features li:last-child {
+  border-bottom: none;
+}
+
+.feature-check {
+  width: 28px;
+  height: 28px;
+  background: var(--text);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+  flex-shrink: 0;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+/* Mission Section */
+.mission-section {
+  padding: 8rem 3rem;
+  background: #ffffff;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.mission-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.mission-content h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 600;
+  margin-bottom: 2.5rem;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+
+.mission-content p {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  line-height: 1.8;
+  letter-spacing: -0.01em;
+}
+
+/* Company Section */
+.company-section {
+  padding: 8rem 3rem;
+  background: var(--bg);
+}
+
+.company-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+
+.info-card {
+  background: #ffffff;
+  padding: 2.5rem;
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.06);
+}
+
+.info-card h3 {
+  color: var(--text-secondary);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+}
+
+.info-card p {
+  font-size: 1.375rem;
+  color: var(--text);
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.map-container {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+/* Footer */
 .site-footer {
   text-align: center;
-  padding: 2rem;
-  font-size: 0.875rem;
-  color: #666;
+  padding: 3rem;
+  border-top: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
 }
 
-/* ===== Hamburger ===== */
+/* Hamburger */
 .hamburger {
   display: none;
   flex-direction: column;
   justify-content: space-between;
-  width: 30px;
-  height: 24px;
+  width: 28px;
+  height: 20px;
   cursor: pointer;
   z-index: 1100;
 }
 
 .hamburger span {
   display: block;
-  height: 3px;
+  height: 2px;
   width: 100%;
-  background: #fff;
+  background: var(--text);
   border-radius: 2px;
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-  transform: translateY(10.5px) rotate(45deg);
+  transform: translateY(9px) rotate(45deg);
 }
 
 .hamburger.active span:nth-child(2) {
@@ -227,10 +400,10 @@ body {
 }
 
 .hamburger.active span:nth-child(3) {
-  transform: translateY(-10.5px) rotate(-45deg);
+  transform: translateY(-9px) rotate(-45deg);
 }
 
-/* ===== Responsive ===== */
+/* Responsive */
 @media (max-width: 768px) {
   .container {
     padding: 0 1.5rem;
@@ -244,14 +417,15 @@ body {
     position: absolute;
     top: 100%;
     right: 1.5rem;
-    background: #1a1a1a;
+    background: #ffffff;
     flex-direction: column;
-    width: 150px;
-    padding: 1rem;
+    width: 220px;
+    padding: 1.5rem;
     display: none;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    border-radius: 16px;
+    border: 1px solid var(--border);
+    margin-top: 1rem;
   }
 
   .nav ul.open {
@@ -259,40 +433,42 @@ body {
   }
 
   .nav ul {
-    gap: 1.5rem;
+    gap: 0;
   }
 
-  .nav a {
-    font-size: 0.9375rem;
+  .nav li {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
   }
 
-  .hero-content.center h1 {
-    font-size: 2rem;
+  .nav li:last-child {
+    border-bottom: none;
   }
 
-  .message-section {
-    padding: 6rem 1.5rem;
+  .hero {
+    padding: 8rem 1.5rem 4rem;
   }
 
-  .company-info {
-    max-width: 100%;
-  }
-
-  .company-info p {
-    /* 修正: スマホでは縦積みにする */
+  .cta-buttons {
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.25rem;
-  }
-
-  .company-info strong,
-  .company-info span {
-    /* 修正: PC用のwidth指定をリセット */
     width: 100%;
-    text-align: left;
   }
 
-  .map {
-    max-width: 100%;
+  .btn {
+    width: 100%;
+  }
+
+  .product-section,
+  .mission-section,
+  .company-section {
+    padding: 5rem 1.5rem;
+  }
+
+  .product-card {
+    padding: 2.5rem;
+  }
+
+  .company-grid {
+    grid-template-columns: 1fr;
   }
 }

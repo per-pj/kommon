@@ -3,28 +3,31 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kommon</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Kommon - 音楽スキルが循環する社会へ</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400&family=Inter:wght@400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" />
   </head>
   <body>
-    <!-- 固定ヘッダー -->
+    <!-- Header -->
     <header class="site-header">
       <div class="container">
         <a href="/" class="logo">
-          <img src="logo-kommon.png" alt="Kommon Logo" />
+          <h3 class="logo-text">Kommon</h3>
         </a>
         <nav class="nav">
           <ul class="nav-list">
-            <li><a href="#who-we-are">事業内容</a></li>
-            <li><a href="#company">会社情報</a></li>
             <li>
-              <a href="https://per-pj.github.io/per-pj/" target="_blank"
-                >ポートフォリオ</a
-              >
+              <a href="#product">プロダクト</a>
+            </li>
+            <li>
+              <a href="#mission">ミッション</a>
+            </li>
+            <li>
+              <a href="#company">会社情報</a>
             </li>
             <li>
               <a href="https://per-pj.github.io/per-pj/contact/" target="_blank"
@@ -41,62 +44,119 @@
       </div>
     </header>
 
-    <!-- Hero -->
+    <!-- Hero Section -->
     <section class="hero">
-      <div class="hero-content center">
-        <h1>Create products people need.</h1>
-      </div>
-    </section>
-
-    <!-- 事業内容 -->
-    <section class="message-section" id="who-we-are">
-      <div class="message-content">
-        <h2 class="message-title">事業内容</h2>
-        <p class="message-text">
-          Kommonは、2016年に創業されたスタートアップです。様々なプロダクトを開発し、検証を行なっています。自社事業開発の他、企業やブランドの本質的な課題を特定し、
-          長期的な価値を生み出すソリューションを設計しています。
+      <div class="hero-content">
+        <div class="hero-badge">🏢 What We Are</div>
+        <h1>音楽スキルが<br class="mobile-break" />循環する社会へ</h1>
+        <p>
+          ボイストレーナーとユーザーをつなぎ、<br />
+          1人でも多くのお困りごとを解決する
         </p>
-        <a
-          href="https://per-pj.github.io/per-pj/contact/"
-          target="_blank"
-          class="contact-button"
-          >お問い合わせ</a
-        >
-      </div>
-      <!-- 画像 -->
-      <div class="services-img">
-        <img src="services.jpg" alt="Services" />
-      </div>
-    </section>
-
-    <!-- 会社情報 -->
-    <section class="message-section" id="company">
-      <div class="message-content">
-        <h2 class="message-title">会社情報</h2>
-        <div class="company-info">
-          <p><strong>会社名</strong><span>Kommon株式会社</span></p>
-          <p><strong>英文社名</strong><span>Kommon, Inc.</span></p>
-          <p><strong>設立日</strong><span>2016年4月15日</span></p>
-          <p><strong>代表取締役</strong><span>酒匂和裕</span></p>
+        <div class="cta-buttons">
+          <a
+            href="https://vocalable.base44.app/"
+            target="_blank"
+            class="btn btn-primary"
+            >Vocalable を見る</a
+          >
+          <a href="#product" class="btn btn-secondary">詳しく知る</a>
         </div>
       </div>
-      <!-- Google Map -->
-      <div class="map">
-        <iframe
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51884.99775295402!2d139.64840753637236!3d35.632352056806475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f4cc9e2835f1%3A0x28078d19a4b01873!2z5p2x5Lqs6YO955uu6buS5Yy6!5e0!3m2!1sja!2sjp!4v1759084904777!5m2!1sja!2sjp"
-          width="100%"
-          height="400"
-          style="border: 0"
-          allowfullscreen=""
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-        ></iframe>
+    </section>
+
+    <!-- Product Section -->
+    <section class="product-section" id="product">
+      <div class="section-content">
+        <div class="section-badge">💫 Our Product</div>
+        <h2 class="section-title">Vocalable</h2>
+        <p class="section-description">
+          プロのボイストレーナーと学びたい人を結ぶ、<br />
+          マッチングプラットフォーム
+        </p>
+
+        <div class="product-card">
+          <div class="product-icon">🎤</div>
+          <h3>スキルの循環を生み出す</h3>
+          <p>
+            Vocalableは、ボイストレーニングのスキルを持つトレーナーと、学びたいユーザーを最適にマッチング。音楽スキルが循環することで、誰もが自分の可能性を広げられる社会を実現します。
+          </p>
+          <ul class="product-features">
+            <li>
+              <span class="feature-check">✓</span>
+              <span>プロのトレーナーと直接つながる</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>自分に合った指導スタイルを見つける</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>スキルを活かしたい人も、学びたい人も</span>
+            </li>
+            <li>
+              <span class="feature-check">✓</span>
+              <span>オンライン・オフラインどちらも対応</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section" id="mission">
+      <div class="mission-content">
+        <div class="section-badge">🎯 Our Mission</div>
+        <h2>1人でも多くの<br />お困りごとを解決する</h2>
+        <p>
+          音楽を学びたいけれど良い先生が見つからない、ボイストレーニングのスキルを活かしたいけれど生徒が見つからない。<br /><br />
+          そんな課題を解決し、音楽スキルが社会の中で循環する仕組みを創ることで、誰もが自分らしく音楽と向き合える世界を目指します。
+        </p>
+      </div>
+    </section>
+
+    <!-- Company Section -->
+    <section class="company-section" id="company">
+      <div class="section-content">
+        <div class="section-badge">🏢 Company</div>
+        <h2 class="section-title">会社情報</h2>
+
+        <div class="company-grid">
+          <div class="info-card">
+            <h3>会社名</h3>
+            <p>Kommon株式会社</p>
+          </div>
+          <div class="info-card">
+            <h3>英文社名</h3>
+            <p>Kommon, Inc.</p>
+          </div>
+          <div class="info-card">
+            <h3>設立日</h3>
+            <p>2016年4月15日</p>
+          </div>
+          <div class="info-card">
+            <h3>代表取締役</h3>
+            <p>酒匂和裕</p>
+          </div>
+        </div>
+
+        <div class="map-container">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51884.99775295402!2d139.64840753637236!3d35.632352056806475!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018f4cc9e2835f1%3A0x28078d19a4b01873!2z5p2x5Lqs6YO955uu6buS5Yy6!5e0!3m2!1sja!2sjp!4v1759084904777!5m2!1sja!2sjp"
+            width="100%"
+            height="450"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="site-footer">
-      <small>© 2016–2025 Kommon Inc.</small>
+      <small>© 2016–2025 Kommon Inc. All rights reserved.</small>
     </footer>
 
     <script src="script.js"></script>
