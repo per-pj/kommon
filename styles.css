@@ -200,14 +200,22 @@ body {
   letter-spacing: -0.01em;
 }
 
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
 .product-card {
   background: #ffffff;
   border-radius: 24px;
-  padding: 4rem;
+  padding: 3rem;
   border: 1px solid var(--border);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .product-card:hover {
@@ -224,14 +232,14 @@ body {
   align-items: center;
   justify-content: center;
   font-size: 2.5rem;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
   position: relative;
   z-index: 1;
 }
 
 .product-card h3 {
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
+  font-size: 1.75rem;
+  margin-bottom: 1rem;
   position: relative;
   z-index: 1;
   font-weight: 600;
@@ -240,12 +248,13 @@ body {
 
 .product-card p {
   color: var(--text-secondary);
-  font-size: 1.125rem;
-  line-height: 1.8;
-  margin-bottom: 3rem;
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 2rem;
   position: relative;
   z-index: 1;
   letter-spacing: -0.01em;
+  flex-grow: 1;
 }
 
 .product-features {
@@ -253,26 +262,22 @@ body {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 1rem;
+  gap: 0.75rem;
+  margin-bottom: 2rem;
 }
 
 .product-features li {
-  padding: 1.25rem 0;
+  padding: 0.75rem 0;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   color: var(--text);
-  border-bottom: 1px solid var(--border);
-  font-size: 1rem;
-}
-
-.product-features li:last-child {
-  border-bottom: none;
+  font-size: 0.9375rem;
 }
 
 .feature-check {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   background: var(--text);
   border-radius: 50%;
   display: flex;
@@ -280,8 +285,62 @@ body {
   justify-content: center;
   color: var(--bg);
   flex-shrink: 0;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: 600;
+}
+
+.product-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.875rem 1.75rem;
+  background: var(--text);
+  color: var(--bg);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  width: fit-content;
+  margin-top: auto;
+}
+
+.product-link:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-link.disabled {
+  background: var(--text);
+  color: var(--bg);
+  cursor: not-allowed;
+  opacity: 0.3;
+}
+
+.product-link.disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.product-card.new-business {
+  background: linear-gradient(135deg, #ffffff 0%, #f8f8f8 100%);
+  border: 2px dashed var(--border);
+}
+
+.coming-soon-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--badge);
+  color: var(--text);
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-top: auto;
+  width: fit-content;
 }
 
 /* Mission Section */
@@ -477,6 +536,10 @@ body {
   .company-section,
   .contact-section {
     padding: 5rem 1.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
   }
 
   .product-card {
